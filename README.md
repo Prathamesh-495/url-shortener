@@ -161,10 +161,13 @@ Client
 ## 📸 Screenshots
 
 ### Frontend UI
-> Clean one-page interface to shorten URLs with optional custom code and expiry date.
+![Frontend](assets/frontend.png)
+
+### Shortened URL Result
+![Result](assets/result.png)
 
 ### API Response
-> JSON response with short URL, click count, and creation timestamp.
+![API Response](assets/api-response.png)
  
 ---
 
