@@ -1,5 +1,6 @@
 package com.example.url_shortner.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +23,8 @@ import jakarta.validation.Valid;
 public class UrlMappingController {
 
     private final UrlMappingService urlMappingService;
+    @Value("${app.base.url:http://localhost:8080}")
+    private String baseUrl;
 
     public UrlMappingController(UrlMappingService urlMappingService) {
         this.urlMappingService = urlMappingService;
@@ -47,7 +50,7 @@ public class UrlMappingController {
 
     private UrlResponse mapToResponse(UrlMapping urlMapping) {
         UrlResponse response = new UrlResponse();
-        response.setShortUrl("http://localhost:8080/" + urlMapping.getShortCode());
+        response.setShortUrl(baseUrl + "/" + urlMapping.getShortCode());
         response.setOriginalUrl(urlMapping.getOriginalUrl());
         response.setCreatedAt(urlMapping.getCreatedAt());
         response.setClickCount(urlMapping.getClickCount());
