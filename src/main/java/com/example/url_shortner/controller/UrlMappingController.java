@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.url_shortner.DTO.UrlRequest;
-import com.example.url_shortner.DTO.UrlResponse;
+import com.example.url_shortner.dto.UrlRequest;
+import com.example.url_shortner.dto.UrlResponse;
 import com.example.url_shortner.entity.UrlMapping;
 import com.example.url_shortner.service.UrlMappingService;
 

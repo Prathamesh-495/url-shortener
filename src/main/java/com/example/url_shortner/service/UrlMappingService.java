@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.example.url_shortner.DTO.UrlRequest;
+import com.example.url_shortner.dto.UrlRequest;
 import com.example.url_shortner.entity.UrlMapping;
 import com.example.url_shortner.repository.UrlMappingRepository;
 
