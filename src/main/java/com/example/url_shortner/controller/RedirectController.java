@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.url_shortner.service.UrlMappingService;
 
@@ -18,7 +19,15 @@ public class RedirectController {
 
     @GetMapping("/{shortCode}")
     public ResponseEntity<Void> redirect(@PathVariable String shortCode) {
+        if (shortCode.isBlank() || shortCode.contains(".")) {
+            return ResponseEntity.notFound().build();
+        }
         String originalUrl = urlMappingService.getOriginalUrl(shortCode);
         return ResponseEntity.status(HttpStatus.FOUND).header("Location", originalUrl).build();
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("Controller is working!");
     }
 }
