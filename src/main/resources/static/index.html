@@ -186,14 +186,14 @@
                     body: JSON.stringify(body)
                 });
 
-                const data = await response.json();
-
                 if (!response.ok) {
-                    showError(data || 'Something went wrong!');
+                    const errorText = await response.text(); // ✅ read as text first
+                    showError(errorText || 'Something went wrong!');
                     return;
                 }
 
-                // show result
+                const data = await response.json(); // ✅ only parse JSON on success
+
                 const shortUrlEl = document.getElementById('shortUrl');
                 shortUrlEl.href = data.shortUrl;
                 shortUrlEl.textContent = data.shortUrl;
