@@ -2,7 +2,7 @@
 
 A full-stack URL shortening service built with **Spring Boot** and **MySQL**, deployed live on Railway.
 
-🌐 **Live Demo:** [url-shortener-production-1439.up.railway.app](https://url-shortener-production-1439.up.railway.app)  
+🌐 **Live Demo:** [url-shortener-0xfg.onrender.com](https://url-shortener-1-0xfg.onrender.com/)  
 📦 **GitHub:** [github.com/Prathamesh-495/url-shortener](https://github.com/Prathamesh-495/url-shortener)
  
 ---
